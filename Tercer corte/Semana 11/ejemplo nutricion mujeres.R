@@ -1,0 +1,11 @@
+r=lm(energia~carbohidrat+grasas+proteinas)
+summary(r)
+res1=rstandard(r)
+energ_est=fitted(r)
+plot(energ_est,res1,pch=16,cex=1.5,cex.axis=1.5,cex.lab=1.5,ylim=c(-3,3))
+abline(h=2,col="red",lwd=2,lty=2)
+abline(h=-2,col="red",lwd=2,lty=2)
+abline(h=0,col="blue",lwd=2,lty=2)
+
+library(car)
+vif(r)
