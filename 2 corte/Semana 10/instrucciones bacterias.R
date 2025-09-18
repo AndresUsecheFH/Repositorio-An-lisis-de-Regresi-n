@@ -1,0 +1,16 @@
+r=lm(n~t)
+res=rstandard(r)
+
+plot(t,rstandard(r),pch=16,cex=1.5,cex.axis=1.5,cex.lab=1.5,ylim=c(-3,3))
+abline(h=2,col="red",lwd=2,lty=2)
+abline(h=-2,col="red",lwd=2,lty=2)
+abline(h=0,col="blue",lwd=2,lty=2)
+
+lnn=log(n,exp(1))
+r2=lm(lnn~t)
+summary(r2)
+res2=rstandard(r2)
+plot(t,rstandard(r2),pch=16,cex=1.5,cex.axis=1.5,cex.lab=1.5,ylim=c(-3,3))
+abline(h=2,col="red",lwd=2,lty=2)
+abline(h=-2,col="red",lwd=2,lty=2)
+abline(h=0,col="blue",lwd=2,lty=2)
